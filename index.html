@@ -15,11 +15,15 @@
   <header class="site-header">
     <div class="logo">GCS<span>SHOP</span></div>
     <nav class="main-nav" id="mainNav">
-      <a href="#hero">首頁</a>
-      <a href="#catalog">商品服務</a>
-      <a href="#about">關於我們</a>
-      <a href="#contact">聯絡</a>
+      <a href="#hero" data-i18n="nav.home">首頁</a>
+      <a href="#catalog" data-i18n="nav.catalog">商品服務</a>
+      <a href="#about" data-i18n="nav.about">關於我們</a>
+      <a href="#contact" data-i18n="nav.contact">聯絡</a>
     </nav>
+    <div class="lang-switch" id="langSwitch" aria-label="Language Switcher">
+      <button type="button" data-lang="zh" class="active">繁中</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
       <span></span><span></span><span></span>
     </button>
@@ -27,102 +31,102 @@
 
   <section id="hero" class="hero section">
     <div class="hero-inner">
-      <h1 class="glitch" data-text="GCS • 全方位代購">GCS • 全方位代購</h1>
-      <p class="subtitle">串流｜遊戲｜技術服務 一站式安心代購</p>
+  <h1 class="glitch" data-text="GCS • 全方位代購" data-i18n="hero.title">GCS • 全方位代購</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">串流｜遊戲｜技術服務 一站式安心代購</p>
       <div class="cta-group">
-        <a class="btn primary" href="#catalog">瀏覽商品</a>
-        <a class="btn outline" href="#contact">取得報價</a>
+        <a class="btn primary" href="#catalog" data-i18n="hero.cta.browse">瀏覽商品</a>
+        <a class="btn outline" href="#contact" data-i18n="hero.cta.contact">聯絡我們</a>
       </div>
     </div>
     <div class="scroll-indicator">SCROLL</div>
   </section>
 
   <section id="catalog" class="section catalog">
-    <h2 class="section-title">商品服務目錄</h2>
-  <p class="catalog-hint" aria-live="polite">提示：點擊下方任一商品可開啟詳情與多方案價格表。</p>
+    <h2 class="section-title" data-i18n="catalog.title">商品服務目錄</h2>
+  <p class="catalog-hint" aria-live="polite" data-i18n="catalog.hint">提示：點擊下方任一商品可開啟詳情與多方案價格表。</p>
     <div class="category-grid">
       <div class="category-card" data-cat="streaming">
-        <h3>串流媒體服務</h3>
-    <ul class="product-list" aria-label="串流媒體服務商品列表">
-          <li data-product="Discord Nitro" role="button" tabindex="0">Discord Nitro</li>
-          <li data-product="YouTube Premium" role="button" tabindex="0">YouTube Premium</li>
-          <li data-product="Spotify" role="button" tabindex="0">Spotify</li>
-          <li data-product="Netflix" role="button" tabindex="0">Netflix</li>
-          <li data-product="Disney+" role="button" tabindex="0">Disney+</li>
+    <h3 data-i18n="category.streaming">串流媒體服務</h3>
+  <ul class="product-list" aria-label="串流媒體服務商品列表">
+      <li data-product="Discord Nitro" data-pid="discord-nitro" role="button" tabindex="0">Discord Nitro</li>
+      <li data-product="YouTube Premium" data-pid="youtube-premium" role="button" tabindex="0">YouTube Premium</li>
+      <li data-product="Spotify" data-pid="spotify" role="button" tabindex="0">Spotify</li>
+      <li data-product="Netflix" data-pid="netflix" role="button" tabindex="0">Netflix</li>
+      <li data-product="Disney+" data-pid="disney-plus" role="button" tabindex="0">Disney+</li>
         </ul>
       </div>
       <div class="category-card" data-cat="gaming">
-        <h3>遊戲相關服務</h3>
-    <ul class="product-list" aria-label="遊戲相關服務商品列表">
-          <li data-product="荒野亂鬥" role="button" tabindex="0">荒野亂鬥</li>
-          <li data-product="特戰英豪" role="button" tabindex="0">特戰英豪</li>
-          <li data-product="Roblox" role="button" tabindex="0">Roblox</li>
-          <li data-product="ExitLag" role="button" tabindex="0">ExitLag</li>
+    <h3 data-i18n="category.gaming">遊戲相關服務</h3>
+  <ul class="product-list" aria-label="遊戲相關服務商品列表">
+      <li data-product="荒野亂鬥" data-pid="brawl-stars" role="button" tabindex="0">荒野亂鬥</li>
+      <li data-product="特戰英豪" data-pid="valorant" role="button" tabindex="0">特戰英豪</li>
+      <li data-product="Roblox" data-pid="roblox" role="button" tabindex="0">Roblox</li>
+      <li data-product="ExitLag" data-pid="exitlag" role="button" tabindex="0">ExitLag</li>
         </ul>
       </div>
       <div class="category-card" data-cat="tech">
-        <h3>專業技術服務</h3>
-    <ul class="product-list" aria-label="專業技術服務商品列表">
-          <li data-product="Discord Store" role="button" tabindex="0">Discord Store</li>
-          <li data-product="SurfShark VPN" role="button" tabindex="0">SurfShark VPN</li>
-          <li data-product="Discord Host" role="button" tabindex="0">Discord Host</li>
-          <li data-product="網域代購" role="button" tabindex="0">網域代購</li>
-          <li data-product="社團識別證" role="button" tabindex="0">社團識別證</li>
-          <li data-product="Discord Bot代寫" role="button" tabindex="0">Discord Bot代寫</li>
-          <li data-product="Website代寫" role="button" tabindex="0">Website代寫</li>
+    <h3 data-i18n="category.tech">專業技術服務</h3>
+  <ul class="product-list" aria-label="專業技術服務商品列表">
+      <li data-product="Discord Store" data-pid="discord-store" role="button" tabindex="0">Discord Store</li>
+      <li data-product="SurfShark VPN" data-pid="surfshark" role="button" tabindex="0">SurfShark VPN</li>
+      <li data-product="Discord Host" data-pid="discord-host" role="button" tabindex="0">Discord Host</li>
+      <li data-product="網域代購" data-pid="domain" role="button" tabindex="0">網域代購</li>
+      <li data-product="社團識別證" data-pid="club-id" role="button" tabindex="0">社團識別證</li>
+      <li data-product="Discord Bot代寫" data-pid="bot-dev" role="button" tabindex="0">Discord Bot代寫</li>
+      <li data-product="Website代寫" data-pid="web-dev" role="button" tabindex="0">Website代寫</li>
         </ul>
       </div>
     </div>
     <div class="tips-box">
-      <p>想了解詳細價格與規格？ <strong>請私訊管理員獲取專業諮詢！</strong></p>
+  <p data-i18n="catalog.tip">想了解詳細價格與規格？ <strong>請私訊管理員獲取專業諮詢！</strong></p>
     </div>
   </section>
 
   <section id="about" class="section about">
     <div class="split">
       <div class="text">
-        <h2>為什麼選擇 GCS？</h2>
-        <p>我們提供安全、快速且透明的代購服務，涵蓋主流串流平台、熱門遊戲與進階技術服務，協助你省時省力取得最合適的方案。</p>
+        <h2 data-i18n="about.title">為什麼選擇 GCS？</h2>
+        <p data-i18n="about.desc">我們提供安全、快速且透明的代購服務，涵蓋主流串流平台、熱門遊戲與進階技術服務，協助你省時省力取得最合適的方案。</p>
         <ul class="features">
-          <li><span>✔</span> 多年經驗與良好評價</li>
-          <li><span>✔</span> 嚴格風險控管與安全流程</li>
-          <li><span>✔</span> 客製化技術與自動化方案</li>
-          <li><span>✔</span> 快速回覆與售後支援</li>
+          <li data-i18n="about.feature1"><span>✔</span> 多年經驗與良好評價</li>
+          <li data-i18n="about.feature2"><span>✔</span> 嚴格風險控管與安全流程</li>
+          <li data-i18n="about.feature3"><span>✔</span> 客製化技術與自動化方案</li>
+          <li data-i18n="about.feature4"><span>✔</span> 快速回覆與售後支援</li>
         </ul>
       </div>
       <div class="panel">
         <div class="stat">
           <div class="num" data-target="1200">0</div>
-          <div class="label">+ 累積客戶</div>
+          <div class="label" data-i18n="stat.clients">+ 累積客戶</div>
         </div>
         <div class="stat">
           <div class="num" data-target="3500">0</div>
-          <div class="label">+ 完成訂單</div>
+          <div class="label" data-i18n="stat.orders">+ 完成訂單</div>
         </div>
         <div class="stat">
           <div class="num" data-target="98">0</div>
-          <div class="label">% 滿意度</div>
+          <div class="label" data-i18n="stat.satisfaction">% 滿意度</div>
         </div>
         <div class="card glass">
-          <h3>願景</h3>
-          <p>打造最值得信賴的一站式數位服務與內容供應平台。</p>
+          <h3 data-i18n="about.vision.title">願景</h3>
+          <p data-i18n="about.vision.text">打造最值得信賴的一站式數位服務與內容供應平台。</p>
         </div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="section contact">
-    <h2 class="section-title">聯絡我們 / 取得報價</h2>
+  <h2 class="section-title" data-i18n="contact.title">聯絡我們 / 取得報價</h2>
     <div class="contact-grid">
       <div class="contact-card">
-        <h3>Discord</h3>
-        <p>加入社群以獲得即時支援與公告。</p>
-  <a id="discordJoin" class="btn small" target="_blank" href="https://discord.gg/RfSbdrmH88">加入 Discord</a>
+    <h3 data-i18n="contact.discord.title">Discord</h3>
+    <p data-i18n="contact.discord.desc">加入社群以獲得即時支援與公告。</p>
+  <a id="discordJoin" class="btn small" target="_blank" href="https://discord.gg/RfSbdrmH88" data-i18n="contact.discord.join">加入 Discord</a>
       </div>
       <div class="contact-card">
-        <h3>Instagram</h3>
-        <p>追蹤我們掌握活動與最新服務。</p>
-        <a class="btn small" target="_blank" href="https://www.instagram.com/gcs_shop.service/">前往 IG</a>
+    <h3 data-i18n="contact.ig.title">Instagram</h3>
+    <p data-i18n="contact.ig.desc">追蹤我們掌握活動與最新服務。</p>
+    <a class="btn small" target="_blank" href="https://www.instagram.com/gcs_shop.service/" data-i18n="contact.ig.go">前往 IG</a>
       </div>
     </div>
   </section>
@@ -131,19 +135,20 @@
     <div class="footer-inner">
       <div class="col">
         <div class="logo">GCS<span>SHOP</span></div>
-        <p class="foot-note">提供合法合規的數位內容與技術協助。任何品牌標誌僅為識別用途。</p>
+  <p class="foot-note" data-i18n="footer.note">提供合法合規的數位內容與技術協助。任何品牌標誌僅為識別用途。</p>
       </div>
       <div class="col">
-        <h4>快速導覽</h4>
+  <h4 data-i18n="footer.nav">快速導覽</h4>
         <ul>
-          <li><a href="#hero">首頁</a></li>
-          <li><a href="#catalog">商品服務</a></li>
-          <li><a href="#about">關於我們</a></li>
-          <li><a href="#contact">聯絡</a></li>
+          <!-- Footer nav links with i18n -->
+          <li><a href="#hero" data-i18n="nav.home">首頁</a></li>
+          <li><a href="#catalog" data-i18n="nav.catalog">商品服務</a></li>
+          <li><a href="#about" data-i18n="nav.about">關於我們</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">聯絡</a></li>
         </ul>
       </div>
       <div class="col">
-        <h4>社群</h4>
+  <h4 data-i18n="footer.social">社群</h4>
         <ul>
           <li><a target="_blank" href="https://discord.gg/RfSbdrmH88">Discord</a></li>
           <li><a target="_blank" href="https://www.instagram.com/gcs_shop.service/">Instagram</a></li>
@@ -175,12 +180,12 @@
         <div class="table-wrap">
           <table class="price-table" aria-describedby="modalTitle">
             <thead>
-              <tr><th>品項</th><th class="col-price">價格 (TWD)</th><th></th></tr>
+              <tr><th data-i18n="table.header.item">品項</th><th class="col-price" data-i18n="table.header.price">價格 (TWD)</th><th data-i18n="table.header.action"></th></tr>
             </thead>
             <tbody id="priceTbody"></tbody>
           </table>
         </div>
-  <p class="helper">點擊「購買」將引導你前往 Discord 進行下單。</p>
+  <p class="helper" data-i18n="modal.helper">點擊「購買」將引導你前往 Discord 進行下單。</p>
       </div>
     </div>
   </div>
