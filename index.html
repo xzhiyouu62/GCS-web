@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCS • 全方位代購</title>
+  <meta name="description" content="GCS 代購｜串流媒體｜遊戲點數｜技術服務｜Discord Nitro｜Netflix｜VPN" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <header class="site-header">
+    <div class="logo">GCS<span>SHOP</span></div>
+    <nav class="main-nav" id="mainNav">
+      <a href="#hero">首頁</a>
+      <a href="#catalog">商品服務</a>
+      <a href="#about">關於我們</a>
+      <a href="#contact">聯絡</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <section id="hero" class="hero section">
+    <div class="hero-inner">
+      <h1 class="glitch" data-text="GCS • 全方位代購">GCS • 全方位代購</h1>
+      <p class="subtitle">串流｜遊戲｜技術服務 一站式安心代購</p>
+      <div class="cta-group">
+        <a class="btn primary" href="#catalog">瀏覽商品</a>
+        <a class="btn outline" href="#contact">取得報價</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">SCROLL</div>
+  </section>
+
+  <section id="catalog" class="section catalog">
+    <h2 class="section-title">商品服務目錄</h2>
+    <div class="category-grid">
+      <div class="category-card" data-cat="streaming">
+        <h3>串流媒體服務</h3>
+        <ul>
+          <li>Discord Nitro</li>
+          <li>YouTube Premium</li>
+          <li>Spotify</li>
+          <li>Netflix</li>
+          <li>Disney+</li>
+        </ul>
+      </div>
+      <div class="category-card" data-cat="gaming">
+        <h3>遊戲相關服務</h3>
+        <ul>
+          <li>荒野亂鬥</li>
+          <li>特戰英豪</li>
+          <li>Roblox</li>
+          <li>ExitLag</li>
+        </ul>
+      </div>
+      <div class="category-card" data-cat="tech">
+        <h3>專業技術服務</h3>
+        <ul>
+          <li>Discord Store</li>
+          <li>SurfShark VPN</li>
+          <li>Discord Host</li>
+          <li>網域代購</li>
+          <li>社團識別證</li>
+          <li>Discord Bot代寫</li>
+          <li>Website代寫</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tips-box">
+      <p>想了解詳細價格與規格？ <strong>請私訊管理員獲取專業諮詢！</strong></p>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <div class="split">
+      <div class="text">
+        <h2>為什麼選擇 GCS？</h2>
+        <p>我們提供安全、快速且透明的代購服務，涵蓋主流串流平台、熱門遊戲與進階技術服務，協助你省時省力取得最合適的方案。</p>
+        <ul class="features">
+          <li><span>✔</span> 多年經驗與良好評價</li>
+          <li><span>✔</span> 嚴格風險控管與安全流程</li>
+          <li><span>✔</span> 客製化技術與自動化方案</li>
+          <li><span>✔</span> 快速回覆與售後支援</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="stat">
+          <div class="num" data-target="1200">0</div>
+          <div class="label">+ 累積客戶</div>
+        </div>
+        <div class="stat">
+          <div class="num" data-target="3500">0</div>
+          <div class="label">+ 完成訂單</div>
+        </div>
+        <div class="stat">
+          <div class="num" data-target="98">0</div>
+          <div class="label">% 滿意度</div>
+        </div>
+        <div class="card glass">
+          <h3>願景</h3>
+          <p>打造最值得信賴的一站式數位服務與內容供應平台。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2 class="section-title">聯絡我們 / 取得報價</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Discord</h3>
+        <p>加入社群以獲得即時支援與公告。</p>
+        <a class="btn small" target="_blank" href="https://discord.gg/RfSbdrmH88">加入 Discord</a>
+      </div>
+      <div class="contact-card">
+        <h3>Instagram</h3>
+        <p>追蹤我們掌握活動與最新服務。</p>
+        <a class="btn small" target="_blank" href="https://www.instagram.com/gcs_shop.service/">前往 IG</a>
+      </div>
+      <div class="contact-card wide glass">
+        <h3>取得專屬諮詢</h3>
+        <p>留下需求與預算，我們會盡速回覆建議方案。</p>
+        <form id="quoteForm" class="quote-form">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="暱稱 / 稱呼" required />
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="form-row">
+            <select name="category" required>
+              <option value="" disabled selected>選擇服務類型</option>
+              <option value="streaming">串流媒體</option>
+              <option value="gaming">遊戲相關</option>
+              <option value="tech">技術服務</option>
+              <option value="other">其他 / 客製</option>
+            </select>
+            <input type="text" name="item" placeholder="欲購項目 (可留空)" />
+          </div>
+          <textarea name="message" rows="4" placeholder="描述需求、期間、預算等..." required></textarea>
+          <button type="submit" class="btn primary full">送出</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="col">
+        <div class="logo">GCS<span>SHOP</span></div>
+        <p class="foot-note">提供合法合規的數位內容與技術協助。任何品牌標誌僅為識別用途。</p>
+      </div>
+      <div class="col">
+        <h4>快速導覽</h4>
+        <ul>
+          <li><a href="#hero">首頁</a></li>
+          <li><a href="#catalog">商品服務</a></li>
+          <li><a href="#about">關於我們</a></li>
+          <li><a href="#contact">聯絡</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>社群</h4>
+        <ul>
+          <li><a target="_blank" href="https://discord.gg/RfSbdrmH88">Discord</a></li>
+          <li><a target="_blank" href="https://www.instagram.com/gcs_shop.service/">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> GCS. All rights reserved.</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
