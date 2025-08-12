@@ -39,36 +39,37 @@
 
   <section id="catalog" class="section catalog">
     <h2 class="section-title">商品服務目錄</h2>
+  <p class="catalog-hint" aria-live="polite">提示：點擊下方任一商品可開啟詳情與多方案價格表。</p>
     <div class="category-grid">
       <div class="category-card" data-cat="streaming">
         <h3>串流媒體服務</h3>
-        <ul>
-          <li>Discord Nitro</li>
-          <li>YouTube Premium</li>
-          <li>Spotify</li>
-          <li>Netflix</li>
-          <li>Disney+</li>
+    <ul class="product-list" aria-label="串流媒體服務商品列表">
+          <li data-product="Discord Nitro" role="button" tabindex="0">Discord Nitro</li>
+          <li data-product="YouTube Premium" role="button" tabindex="0">YouTube Premium</li>
+          <li data-product="Spotify" role="button" tabindex="0">Spotify</li>
+          <li data-product="Netflix" role="button" tabindex="0">Netflix</li>
+          <li data-product="Disney+" role="button" tabindex="0">Disney+</li>
         </ul>
       </div>
       <div class="category-card" data-cat="gaming">
         <h3>遊戲相關服務</h3>
-        <ul>
-          <li>荒野亂鬥</li>
-          <li>特戰英豪</li>
-          <li>Roblox</li>
-          <li>ExitLag</li>
+    <ul class="product-list" aria-label="遊戲相關服務商品列表">
+          <li data-product="荒野亂鬥" role="button" tabindex="0">荒野亂鬥</li>
+          <li data-product="特戰英豪" role="button" tabindex="0">特戰英豪</li>
+          <li data-product="Roblox" role="button" tabindex="0">Roblox</li>
+          <li data-product="ExitLag" role="button" tabindex="0">ExitLag</li>
         </ul>
       </div>
       <div class="category-card" data-cat="tech">
         <h3>專業技術服務</h3>
-        <ul>
-          <li>Discord Store</li>
-          <li>SurfShark VPN</li>
-          <li>Discord Host</li>
-          <li>網域代購</li>
-          <li>社團識別證</li>
-          <li>Discord Bot代寫</li>
-          <li>Website代寫</li>
+    <ul class="product-list" aria-label="專業技術服務商品列表">
+          <li data-product="Discord Store" role="button" tabindex="0">Discord Store</li>
+          <li data-product="SurfShark VPN" role="button" tabindex="0">SurfShark VPN</li>
+          <li data-product="Discord Host" role="button" tabindex="0">Discord Host</li>
+          <li data-product="網域代購" role="button" tabindex="0">網域代購</li>
+          <li data-product="社團識別證" role="button" tabindex="0">社團識別證</li>
+          <li data-product="Discord Bot代寫" role="button" tabindex="0">Discord Bot代寫</li>
+          <li data-product="Website代寫" role="button" tabindex="0">Website代寫</li>
         </ul>
       </div>
     </div>
@@ -139,6 +140,7 @@
               <option value="tech">技術服務</option>
               <option value="other">其他 / 客製</option>
             </select>
+            <!-- end original select -->
             <input type="text" name="item" placeholder="欲購項目 (可留空)" />
           </div>
           <textarea name="message" rows="4" placeholder="描述需求、期間、預算等..." required></textarea>
@@ -175,6 +177,36 @@
     <div class="copy">© <span id="year"></span> GCS. All rights reserved.</div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20250813" defer></script>
+  <script>setTimeout(()=>{if(!window.GCSInit){console.warn('[GCS] main.js 未載入或執行失敗');const warn=document.createElement('div');warn.style.cssText='position:fixed;bottom:10px;left:10px;background:#b4002a;color:#fff;padding:10px 14px;font:12px system-ui;border-radius:8px;z-index:9999;box-shadow:0 4px 14px -4px rgba(0,0,0,.6)';warn.textContent='警告：主程式未成功載入，請檢查路徑 assets/js/main.js';document.body.appendChild(warn);} },1200);</script>
+  <!-- Product Detail Modal -->
+  <div class="modal" id="productModal" aria-hidden="true" role="dialog" aria-modal="false">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" data-close aria-label="關閉">×</button>
+      <div class="modal-head">
+        <h3 id="modalTitle">商品詳情</h3>
+        <div class="select-wrap">
+          <select id="productSelect" aria-label="切換商品"></select>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="product-desc" id="productDesc"></p>
+        <div class="meta-row">
+          <span class="meta-item" id="productCount"></span>
+          <span class="meta-item" id="productUpdated"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="price-table" aria-describedby="modalTitle">
+            <thead>
+              <tr><th>品項</th><th class="col-price">價格 (TWD)</th><th></th></tr>
+            </thead>
+            <tbody id="priceTbody"></tbody>
+          </table>
+        </div>
+  <p class="helper">點擊「購買」可快速填入諮詢表單。</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
