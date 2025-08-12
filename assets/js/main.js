@@ -87,26 +87,7 @@ const revealObs = new IntersectionObserver(entries=>{
 },{threshold:.2});
 revealEls.forEach(el=>revealObs.observe(el));
 
-// Quote form (mock handler)
-const form = document.getElementById('quoteForm');
-const formStatus = document.getElementById('formStatus');
-form?.addEventListener('submit',e=>{
-  e.preventDefault();
-  formStatus.textContent = '傳送中...';
-  formStatus.className = 'form-status';
-  const data = Object.fromEntries(new FormData(form).entries());
-  // Fake async
-  setTimeout(()=>{
-    if(!data.name || !data.email || !data.message){
-      formStatus.textContent = '請完整填寫必要欄位。';
-      formStatus.classList.add('error');
-      return;
-    }
-    formStatus.textContent = '已送出，我們會盡速回覆！';
-    formStatus.classList.add('success');
-    form.reset();
-  }, 900);
-});
+// 已移除諮詢表單：保留占位註解以便未來需要再回復。
 
 // Year
 const yearEl = document.getElementById('year');
@@ -154,7 +135,7 @@ const productCount = document.getElementById('productCount');
 const productUpdated = document.getElementById('productUpdated');
 const priceTbody = document.getElementById('priceTbody');
 const productSelect = document.getElementById('productSelect');
-const quoteForm = document.getElementById('quoteForm');
+const discordJoinBtn = document.getElementById('discordJoin');
 
 function openModal(name){
   if(!PRODUCTS[name]) return;
@@ -193,16 +174,13 @@ document.addEventListener('click',e=>{
     closeModal();
   }
   if(e.target.matches('button[data-inject]')){
-    const value = e.target.getAttribute('data-inject');
-    if(quoteForm){
-      const categoryField = quoteForm.querySelector('select[name="category"]');
-      const itemField = quoteForm.querySelector('input[name="item"]');
-      const cat = detectCategoryFromProduct(value);
-      if(categoryField && cat){categoryField.value = cat;}
-      if(itemField){itemField.value = value;}
-      closeModal();
-      setTimeout(()=>{document.getElementById('contact')?.scrollIntoView({behavior:'smooth'});},260);
-    }
+    // 關閉彈窗並捲動到 Discord 按鈕前
+    closeModal();
+    setTimeout(()=>{
+      discordJoinBtn?.scrollIntoView({behavior:'smooth', block:'center'});
+      discordJoinBtn?.classList.add('pulse-focus');
+      setTimeout(()=>discordJoinBtn?.classList.remove('pulse-focus'),1800);
+    },200);
   }
 });
 // Keyboard support for list items
@@ -303,61 +281,4 @@ document.addEventListener('focus',e=>{
   };
 })();
 
-// Enhance quote form category select similarly
-(function enhanceQuoteCategory(){
-  const catSelect = document.querySelector('form#quoteForm select[name="category"]');
-  if(!catSelect) return;
-  if(catSelect.dataset.enhanced) return;
-  const wrap = document.createElement('div');
-  wrap.className='select-wrap full enhanced';
-  catSelect.parentNode.insertBefore(wrap,catSelect);
-  wrap.appendChild(catSelect);
-  catSelect.dataset.enhanced='true';
-  const trigger = document.createElement('button');
-  trigger.type='button';
-  trigger.className='c-select';
-  trigger.setAttribute('aria-haspopup','listbox');
-  trigger.setAttribute('aria-expanded','false');
-  trigger.textContent = catSelect.options[catSelect.selectedIndex]?.text || '選擇服務類型';
-  const list = document.createElement('div');
-  list.className='c-options';
-  list.setAttribute('role','listbox');
-  function rebuild(){
-    list.innerHTML='';
-    [...catSelect.options].forEach(opt=>{
-      const optDiv=document.createElement('div');
-      optDiv.className='c-option';
-      optDiv.setAttribute('role','option');
-      optDiv.setAttribute('data-value',opt.value);
-      optDiv.tabIndex=-1;
-      if(opt.selected) optDiv.setAttribute('aria-selected','true');
-      optDiv.textContent=opt.text;
-      optDiv.addEventListener('click',()=>selectValue(opt.value));
-      list.appendChild(optDiv);
-    });
-  }
-  function open(){wrap.classList.add('select-open');trigger.setAttribute('aria-expanded','true');}
-  function close(){wrap.classList.remove('select-open');trigger.setAttribute('aria-expanded','false');}
-  function toggle(){wrap.classList.contains('select-open')?close():open();}
-  function selectValue(val){
-    if(!val) return; // disabled placeholder
-    catSelect.value=val;
-    [...list.children].forEach(c=>c.setAttribute('aria-selected',c.getAttribute('data-value')===val?'true':'false'));
-    trigger.textContent=catSelect.options[catSelect.selectedIndex].text;
-    close();
-  }
-  trigger.addEventListener('click',toggle);
-  document.addEventListener('click',e=>{if(!wrap.contains(e.target)) close();});
-  document.addEventListener('keydown',e=>{
-    if(!wrap.classList.contains('select-open')) return;
-    const opts=[...list.querySelectorAll('.c-option')];
-    let idx=opts.indexOf(document.activeElement);
-    if(e.key==='ArrowDown'){e.preventDefault();(opts[idx+1]||opts[0]).focus();}
-    else if(e.key==='ArrowUp'){e.preventDefault();(opts[idx-1]||opts.at(-1)).focus();}
-    else if(e.key==='Enter'){e.preventDefault();document.activeElement.click();}
-    else if(e.key==='Escape'){close();trigger.focus();}
-  });
-  wrap.insertBefore(trigger,catSelect);
-  wrap.appendChild(list);
-  rebuild();
-})();
+// 已移除諮詢表單相關自訂下拉選單。
